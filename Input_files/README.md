@@ -1,5 +1,5 @@
-Input files
+OT2 files
 ---
-Input XLSX files used in protocol phenotipation.py for the OT2: 
-- **phenotipation_input_toggle.xlsx**: input file used for toggle switch phenotyping
-- **phenotipation_input_genomic_insert.xlsx**: input file used for genomic insertions phenotyping 
+Files used as input and created as output for phenotipation.py 
+- **input_files**: input XLSX files for phenotypation.py
+- **phenotipation_input_genomic_insert.xlsx**: Output created by phenotypation.py
