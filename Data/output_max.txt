@@ -1,0 +1,48 @@
+-------------------------------------
+
+Organisation of plates:
+Plate number 1 will be placed in deck slot 1
+Plate number 2 will be placed in deck slot 2
+
+-------------------------------------
+Organisation of Opentrons 15 Tube Rack with Falcon 15 mL Conical on 9 in 9
+Put 4.9 ml of water into C5 of tuberack
+
+--------------------
+Organization of deck slots (this information will also be displayed by the Opentrons App):
+
+Slot 1: Labware VWR Blueprint Depth 105 96 Well Plate 390 µL on 1
+Slot 2: Labware VWR Blueprint Depth 105 96 Well Plate 390 µL on 2
+Slot 4: Labware Opentrons 96 Tip Rack 20 µL on 4
+Slot 8: Labware Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 8
+Slot 9: Labware Opentrons 15 Tube Rack with Falcon 15 mL Conical on 9
+Slot 10: Labware 96_well_deepwell_plate_1200ul on Heater-Shaker Module GEN1 on 10
+Slot 11: Labware Opentrons 96 Tip Rack 300 µL on 11
+Slot 12: Labware Opentrons Fixed Trash on 12
+
+Please bear in mind that the volumes shown are minimum volumes needed, if you want to put more feel free.
+-------------------------------------
+Organisation of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 8 
+
++---+------------+------------+------------+------------+------------+------------+
+|   | 1          | 2          | 3          | 4          | 5          | 6          |
++---+------------+------------+------------+------------+------------+------------+
+| A | IPTG with  | ATC with   | Colony 4 ( | LB (1669   | LB (1543   | LB with 2x |
+|   | 2x Km      | 2x Ap      | 455.555555 | uL)        | uL)        | Ap (1594   |
+|   | (1069.0625 | (496.875   | 5555556    |            |            | uL)        |
+|   | uL)        | uL)        | uL)        |            |            |            |
+| B | IPTG with  | Colony 1 ( | Colony 5 ( | LB (1706   | LB with 2x | LB with 2x |
+|   | 2x Gm      | 272.972972 | 346.153846 | uL)        | Km (1736   | Ap (957    |
+|   | (653.75    | 9729729    | 1538462    |            | uL)        | uL)        |
+|   | uL)        | uL)        | uL)        |            |            |            |
+| C | IPTG       | Colony 2 ( | Colony 6 ( | LB (1619   | LB with 2x | Empty      |
+|   | (653.75    | 320.689655 | 313.333333 | uL)        | Km (395    |            |
+|   | uL)        | 1724138    | 3333333    |            | uL)        |            |
+|   |            | uL)        | uL)        |            |            |            |
+| D | IPTG with  | Colony 3 ( | LB (1750   | LB (1698   | LB with 2x | Empty      |
+|   | 2x Ap      | 455.555555 | uL)        | uL)        | Gm (1197   |            |
+|   | (653.75    | 5555556    |            |            | uL)        |            |
+|   | uL)        | uL)        |            |            |            |            |
++---+------------+------------+------------+------------+------------+------------+
+
+-------------------------------------
