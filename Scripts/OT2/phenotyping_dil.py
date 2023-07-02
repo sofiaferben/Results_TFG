@@ -1619,7 +1619,6 @@ def run(protocol: opentrons.protocol_api.ProtocolContext):
     new_well=0
     print('\nWells In eppendorf racks: \n')
 
-    #---------- ESTO METERLO DENTRO DE LA FUNCION NO TIENE SENTIDO 
     eppendorf_rack,pos=load_labware(positions_eppendorf,'opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap')
     dicc_positions_eppendorf[eppendorf_rack]={}
 
