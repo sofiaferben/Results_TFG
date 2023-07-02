@@ -1584,15 +1584,12 @@ def run(protocol: opentrons.protocol_api.ProtocolContext):
         ----------
         rack_eppendorf : opentrons.protocol_api.labware.Labware
             eppendorf rack  from which the position of the reagents will be printed
-        organisation : dict
+        organization: dict
             Dictionary with well of each eppendorf rack as key and as value a list in form [type_liquid,volume_of_the_liquid]
         """
    
         
         print("Organisation of %s \n"%rack_eppendorf)
-
-        ##OPCION 3: Prettytable 
-
         # Create a PrettyTable for the labware representation
         table = PrettyTable()
         table.field_names = ['', '1', '2', '3', '4', '5', '6']
@@ -1625,13 +1622,10 @@ def run(protocol: opentrons.protocol_api.ProtocolContext):
 
 
     # Step 1: Make the dictionaries necessary for the script
-    # dicc_inductor=excel_to_dict('/data/user_storage/test_water.xlsx',1)
-    # dicc_colonies=excel_to_dict('/data/user_storage/test_water.xlsx',2) 
-    # dicc_relation=excel_to_dict('/data/user_storage/test_water.xlsx',3)
-
-    dicc_inductor=excel_to_dict('test_water.xlsx',1)
-    dicc_colonies=excel_to_dict('test_water.xlsx',2) 
-    dicc_relation=excel_to_dict('test_water.xlsx',3)
+    dicc_inductor=excel_to_dict('data/user_storage/phenotyping_input.xlsx',1)
+    dicc_colonies=excel_to_dict('data/user_storage/phenotyping_input.xlsx',2)
+    dicc_relation=excel_to_dict('data/user_storage/phenotyping_input.xlsx',3)
+   
 
     ## 1.1 Preprocess dicts so that they can be used in protocol. 
     preprocess_diccs(dicc_inductor,dicc_colonies,dicc_relation)
@@ -1643,18 +1637,8 @@ def run(protocol: opentrons.protocol_api.ProtocolContext):
 
     ##Step 1: Calculate initial stocks
     colonies_stocks,colony_dilution_stocks=calculate_initial_stocks(dicc_inductor,dicc_colonies,dicc_relation,dicc_general['Final volume per well (in ul)'],dicc_general['pip left'],dicc_general['pip right'],dicc_vol_medium,dicc_vol_colonies,dicc_vol_inductor)
-    print(colonies_stocks)
-    print(colony_dilution_stocks)
-    # print(colonies_stocks)
-    # print('\nDiccs of total volumes: \n')
-    # print(dicc_vol_medium)
-    # print(dicc_vol_colonies)
-    # print(dicc_vol_inductor)
 
-
-
-
-    # ###Step 2: Organise Eppendorf racks 
+    ## Step 2: Organise Eppendorf racks 
 
     new_well=0
     print('\nWells In eppendorf racks: \n')
@@ -1662,11 +1646,6 @@ def run(protocol: opentrons.protocol_api.ProtocolContext):
     #---------- ESTO METERLO DENTRO DE LA FUNCION NO TIENE SENTIDO 
     eppendorf_rack,pos=load_labware(positions_eppendorf,'opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap')
     dicc_positions_eppendorf[eppendorf_rack]={}
-
-    #print('position eppendorf rack ',pos)
-    #print('position to avoid for multi ',pos+3)
-    #print('position to avoid for tuberack ',pos-3)
-
     for pos_multi in positions_tips_multi: ## to aovid crashing while getting tips 
         if pos_multi==pos+3:
             positions_tips_multi.pop(pos_multi)
@@ -1681,9 +1660,7 @@ def run(protocol: opentrons.protocol_api.ProtocolContext):
         organise_eppendorf_rack(protocol,dicc,dicc_inductor,dicc_colonies,eppendorf_rack,positions_tips_multi,dicc_positions_eppendorf)
 
 
-    # ##Step 1: Organize  the rest fo the deck 
-    #----  ESTO ERA PORQUE SI NO ME ACUERO MUY BIEN PORQUE PRIEMRO EPPENDORF RACK 
-
+    ## Step 1: Organize  the rest for the deck 
     hs_mod,plate_dilutions,dicc_water,total_volume_water,falcon_tubes=organise_deck(protocol,dicc_inductor,dicc_colonies,dicc_relation,dicc_general,colonies_stocks,colony_dilution_stocks)
 
     ##Organise deep well
