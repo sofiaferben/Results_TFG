@@ -23,7 +23,7 @@ In order to perform the protocol for phenotyping protocol perform the following 
    ```
    opentrons_simulate phenotyping.py -o nothing 
    ```
-6. Upload XLSX file to OT2 via command line. Refer to:https://support.opentrons.com/s/article/Copying-files-to-and-from-your-OT-2-with-SCP . The command needed to do so is 
+6. Upload XLSX file to OT2 via command line. Refer to:https://support.opentrons.com/s/article/Copying-files-to-and-from-your-OT-2-with-SCP . The command needed to do so is :
    ```
    scp -i ot2_ssh_key /path/on/computer/phenotyping_intput.xlsx root@ROBOT_IP:/data/user_storage
 
